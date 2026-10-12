@@ -7,7 +7,7 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - mynetwork
+      - myapp
 
   auth_service:
     image: neha7284/flm02:authimage
@@ -16,7 +16,7 @@ services:
     ports:
       - "5001:5001"
     networks:
-      - mynetwork
+      - myapp
    
 
   book_service:
@@ -26,7 +26,7 @@ services:
     ports:
       - "5002:5002"
     networks:
-      - mynetwork
+      - myapp
    
       
   borrow_service:
@@ -36,7 +36,7 @@ services:
     ports:
       - "5003:5003"
     networks:
-      - mynetwork
+      - myapp
    
 
   frontend:
@@ -46,9 +46,9 @@ services:
     ports:
       - "5000:5000"
     networks:
-      - mynetwork
+      - myapp
    
 
 networks:
-  mynetwork:
+  myapp:
     driver: overlay
